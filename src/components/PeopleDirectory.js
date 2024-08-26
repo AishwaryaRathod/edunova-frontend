@@ -619,12 +619,16 @@ function PeopleDirectory() {
                         <span>@username</span>
                       </div>
                     </td>
-                    <td className="py-3 text-sm">
-                      <div className="border border-solid rounded-lg shadow-md ml-2 p-1 w-20 text-xs text-center">
-                        <span className="inline-block w-2 h-2 bg-green-600 rounded-full mr-2"></span>
-                        {person.status}
-                      </div>
-                    </td>
+                   <td className="py-3 text-sm">
+  <div className="border border-solid rounded-lg shadow-md ml-2 p-1 w-20 text-xs text-center">
+    <span
+      className={`inline-block w-2 h-2 rounded-full mr-2 ${
+        person.status === 'Inactive' ? 'bg-red-600' : 'bg-green-600'
+      }`}
+    ></span>
+    {person.status}
+  </div>
+</td>
                     {expandedPerson === null && (
                       <>
                         <td className="py-3 px-4 text-sm w-48">
